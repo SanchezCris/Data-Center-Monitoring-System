@@ -1,12 +1,24 @@
+#include <WiFiClientSecure.h>
+#include <PubSubClient.h>
+#include <ArduinoJson.h>
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <Adafruit_Sensor.h>
 #include <DHT_U.h>
 #include <Adafruit_Fingerprint.h>
 #include <Servo.h>
+#include <time.h>
+#include "secrets.h"
+#include "DHT.h"
 
+//CAMBIAR USUARIO Y CONTRASEÑA RED Wi-Fi
+String WifiUser = "TIGO-8817"; //CrisNote8pro
+String WifiPass = "4NJ9ED800790"; //csy050801
 
 String apiKey = "750PC6UFHUHFPS9X";  //API key Thingspeak
+#define AWS_IOT_PUBLISH_TOPIC "esp8266/pub"
+#define AWS_IOT_SUBSCRIBE_TOPIC "esp8266/sub"
+
 #define DHTTYPE DHT11 // define sensor DHT11
 
 #define RXsensor D1 //pin donde la terminal RX del sensor de huella está conectado
@@ -21,6 +33,14 @@ DHT_Unified dht(DHTPIN, DHT11);
 WiFiClient client;
 uint32_t delayMS;
 
+WiFiClientSecure net;
+BearSSL::X509List cert(cacert);
+BearSSL::X509List client_crt(client_cert);
+BearSSL::PrivateKey key(privkey);
+PubSubClient client2(net);
+time_t now;
+time_t nowish = 1510592825;
+
 #if (defined(__AVR__) || defined(ESP8266)) && !defined(__AVR_ATmega2560__)
 SoftwareSerial mySerial(TXsensor, RXsensor); //D2,D1 = TX sensor Huella, RX sensor Huella
 #endif
@@ -33,9 +53,97 @@ int id3 = 0; //Contador para la huella de Cesar
 int id4 = 0; //Contador para las veces que una huella es denegada
 int valt = 0; //Contador para buzzer temperatura.
 int valtkey = 0; //LLave para contador para buzzer temperatura.
+int millisec;
+int tseconds;
+int tminutes;
+int seconds;
+int times;
+float h;
+float t;
+String DisplayTime;
+String fecha;
+unsigned long lastMillis = 0;
+unsigned long previousMillis = 0;
+const long interval = 5000;
 
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
+void NTPConnect(void)
+{
+  configTime(TIME_ZONE * 3600, 0 * 3600, "pool.ntp.org", "time.nist.gov");
+
+  now = time(nullptr);
+  while (now < nowish)
+  {
+    delay(500);
+    Serial.print(".");
+    now = time(nullptr);
+  }
+  struct tm timeinfo;
+  getLocalTime(&timeinfo);
+}
+ 
+void messageReceived(char *topic, byte *payload, unsigned int length)
+{
+  Serial.print("Received [");
+  Serial.print(topic);
+  Serial.print("]: ");
+  for (int i = 0; i<length; i++)
+  {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+}
+  
+void connectAWS()
+{
+  //delay(3000);
+  WiFi.mode(WIFI_STA);
+  //WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+ 
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    Serial.print(".");
+    delay(1000);
+  }
+ 
+  NTPConnect();
+ 
+  net.setTrustAnchors(&cert);
+  net.setClientRSACert(&client_crt, &key);
+  client2.setServer(MQTT_HOST, 8883);
+  client2.setCallback(messageReceived);
+ 
+  while (!client2.connect(THINGNAME))
+  {
+    Serial.print(".");
+    delay(1000);
+  }
+ 
+  if (!client2.connected()) {
+    Serial.println("AWS IoT Timeout!");
+    return;
+  }
+  // Subscribe to a topic
+  client2.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
+  Serial.println("AWS IoT Connected!");
+}
+ 
+void publishMessage()
+{
+  StaticJsonDocument<200> doc;
+  struct tm timeinfo;
+  getLocalTime(&timeinfo);
+  fecha = asctime(&timeinfo);
+  doc["Time"] = fecha;
+  doc["Humidity"] = h;
+  doc["Temperature"] = t;
+  char jsonBuffer[512];
+  serializeJson(doc, jsonBuffer); // print to client
+ 
+  client2.publish(AWS_IOT_PUBLISH_TOPIC, jsonBuffer);
+}
+ 
 void setup()
 {
   pinMode(TXsensor, OUTPUT); //TX sensor Huella  D2
@@ -44,9 +152,9 @@ void setup()
   pinMode(BUZZ, OUTPUT); //BUZZER UMBRAL TEMPERATURA
   
   Serial.begin(9600);
-  Serial.println();
   dht.begin();
-  WiFi.begin("TIGO-8817", "4NJ9ED800790");  //CAMBIAR USUARIO Y CONTRASEÑA RED Wi-Fi
+  WiFi.begin(WifiUser, WifiPass);
+  connectAWS();
 
   servo.attach(SERVOMOTOR); //Servomotor
   while (!Serial);
@@ -194,8 +302,6 @@ int getFingerprintIDez() {
   return finger.fingerID;
 }
 
-
-
 void loop() {
   delay(delayMS); //Retraso entre mediciones.
   sensors_event_t event; //evento de temperatura
@@ -272,7 +378,6 @@ void loop() {
     client.print(postStr.length());
     client.print("\n\n");
     client.print(postStr);
- 
   }
 
   client.stop();
@@ -288,5 +393,32 @@ void loop() {
     val = 0;
   }
   
+  h = event2.relative_humidity;
+  t = event.temperature;
+  times = millis();
+  millisec  = times % 100;
+  tseconds = times/1000;
+  tminutes = tseconds / 60;
+  seconds = tseconds % 60;
+  
+  DisplayTime = "Time: " + String(tminutes,DEC) + ":" + String(seconds,DEC) + ":" + String(millisec,DEC);
+
+  //Serial.println(DisplayTime);
+  //Serial.println(time(nullptr));
+  //delay(2000);
+  now = time(nullptr);
+  if (!client2.connected())
+  {
+    connectAWS();
+  }
+  else
+  {
+    client2.loop();
+    if (millis() - lastMillis > 5000)
+    {
+      lastMillis = millis();
+      publishMessage();
+    }
+  }
   delay(1000);
 }
