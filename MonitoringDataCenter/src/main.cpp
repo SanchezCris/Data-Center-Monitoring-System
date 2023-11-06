@@ -403,9 +403,6 @@ void loop() {
   
   DisplayTime = "Time: " + String(tminutes,DEC) + ":" + String(seconds,DEC) + ":" + String(millisec,DEC);
 
-  //Serial.println(DisplayTime);
-  //Serial.println(time(nullptr));
-  //delay(2000);
   now = time(nullptr);
   if (!client2.connected())
   {
