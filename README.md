@@ -26,3 +26,7 @@ Dirigirse a Platformio y esperar a que se instalen las dependencias de la IDE, l
 
 ### Crear un nuevo proyecto en Platformio:
 
+Dirigirse a Platformio, PIO Home, create new project. Colocar las especificaciones que se muestran en la siguiente imagen, escoger la ruta de preferencia donde se almacenará el proyecto.
+
+[![3.png](https://i.postimg.cc/nVNRd5WP/3.png)](https://postimg.cc/5jqSyPbB)
+
