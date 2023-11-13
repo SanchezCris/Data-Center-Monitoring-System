@@ -15,3 +15,8 @@ Se recomienda utilizar Platformio IDE en Visual Studio Code ya que es mucho más
     https://code.visualstudio.com/download
 
 [![Visual-Studio-Code.png](https://i.postimg.cc/kGLLTj38/Visual-Studio-Code.png)](https://postimg.cc/H84Sx9Ls)
+
+### Agregar a Visual Studio Code la extensión Platformio IDE:
+
+[![Platformio.png](https://i.postimg.cc/xTFmjXJ4/Platformio.png)](https://postimg.cc/jLP2ZdhH)
+
