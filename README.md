@@ -30,3 +30,11 @@ Dirigirse a Platformio, PIO Home, create new project. Colocar las especificacion
 
 [![3.png](https://i.postimg.cc/nVNRd5WP/3.png)](https://postimg.cc/5jqSyPbB)
 
+Importar al proyecto las siguientes librerías:
+
+[![Captura.jpg](https://i.postimg.cc/RhqBrQWG/Captura.jpg)](https://postimg.cc/Lgd7LPBZ)
+
+Luego crear dos copias del proyecto en el explorador de archivos, cambiar el nombre a las carpetas de la siguiente forma:
+
+
+
