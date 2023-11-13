@@ -18,5 +18,11 @@ Se recomienda utilizar Platformio IDE en Visual Studio Code ya que es mucho más
 
 ### Agregar a Visual Studio Code la extensión Platformio IDE:
 
+Dirigirse a Platformio y esperar a que se instalen las dependencias de la IDE, luego reiniciar Visual Studio Code.
+
 [![Platformio.png](https://i.postimg.cc/xTFmjXJ4/Platformio.png)](https://postimg.cc/jLP2ZdhH)
+
+[![2.png](https://i.postimg.cc/N06jJvLQ/2.png)](https://postimg.cc/TyPx1Srs)
+
+### Crear un nuevo proyecto en Platformio:
 
