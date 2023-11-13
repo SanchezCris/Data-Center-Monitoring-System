@@ -9,3 +9,9 @@ Desarrollo e implementación de un sistema integral de monitoreo de centros de d
 # ¿Cómo usar el prototipo?
 
 Se recomienda utilizar Platformio IDE en Visual Studio Code ya que es mucho más fácil la instalación de librerías compatibles.
+
+### Descargar Visual Studio Code:
+
+    $ https://code.visualstudio.com/download
+
+[![Visual-Studio-Code.png](https://i.postimg.cc/kGLLTj38/Visual-Studio-Code.png)](https://postimg.cc/H84Sx9Ls)
