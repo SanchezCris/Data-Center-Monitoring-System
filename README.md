@@ -28,7 +28,7 @@ Dirigirse a Platformio y esperar a que se instalen las dependencias de la IDE, l
 
 Dirigirse a Platformio, PIO Home, create new project. Colocar las especificaciones que se muestran en la siguiente imagen, escoger la ruta de preferencia donde se almacenará el proyecto.
 
-[![3.png](https://i.postimg.cc/nVNRd5WP/3.png)](https://postimg.cc/5jqSyPbB)
+[![Board.png](https://i.postimg.cc/gJNt3xYZ/Board.png)](https://postimg.cc/xJNP2TNf)
 
 Importar al proyecto las siguientes librerías:
 
