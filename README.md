@@ -46,3 +46,7 @@ Añadir las cuatro carpetas al área de trabajo en Visual Studio Code.
 [![11.png](https://i.postimg.cc/GhQP2Wm4/11.png)](https://postimg.cc/bsZSVFbP)
 
 ### Borrar Huellas:
+
+Dirigirse al archivo main.cpp dentro de la carpeta Clean Fingerprint, verificar que la terminal se encuentre en el entorno Default(Clean Fingerprint), compilar, cargar y seguir las instrucciones para borarr las huellas anteriormente registradas.
+
+[![12.png](https://i.postimg.cc/NGNmv1JX/12.png)](https://postimg.cc/vDVcW6d8)
