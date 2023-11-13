@@ -43,4 +43,6 @@ Copiar la carpeta certificates a la carperta de trabajo del proyecto.
 Copiar el archivo secrets.h a la primer carpeta creada, tal y como se muestra en este repositorio.
 Añadir las cuatro carpetas al área de trabajo en Visual Studio Code. 
 
+[![11.png](https://i.postimg.cc/GhQP2Wm4/11.png)](https://postimg.cc/bsZSVFbP)
 
+### Borrar Huellas:
