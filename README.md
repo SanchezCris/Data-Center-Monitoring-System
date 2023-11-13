@@ -34,12 +34,13 @@ Importar al proyecto las siguientes librerías:
 
 [![Captura.jpg](https://i.postimg.cc/RhqBrQWG/Captura.jpg)](https://postimg.cc/Lgd7LPBZ)
 
-Luego crear dos copias del proyecto en el explorador de archivos, cambiar el nombre a las carpetas de la siguiente forma:
+Luego crear copias del proyecto en el explorador de archivos, cambiar el nombre a las carpetas de la siguiente forma:
 
 [![10.png](https://i.postimg.cc/R0NCxB2w/10.png)](https://postimg.cc/3yQQ2P8w)
 
 Sustituir el código de los archivos main.cpp de cada carpeta según los archivos que se muestran en este repositorio.
 Copiar la carpeta certificates a la carperta de trabajo del proyecto.
-
+Copiar el archivo secrets.h a la primer carpeta creada, tal y como se muestra en este repositorio.
+Añadir las cuatro carpetas al área de trabajo en Visual Studio Code. 
 
 
