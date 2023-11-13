@@ -12,6 +12,6 @@ Se recomienda utilizar Platformio IDE en Visual Studio Code ya que es mucho más
 
 ### Descargar Visual Studio Code:
 
-    $ https://code.visualstudio.com/download
+    https://code.visualstudio.com/download
 
 [![Visual-Studio-Code.png](https://i.postimg.cc/kGLLTj38/Visual-Studio-Code.png)](https://postimg.cc/H84Sx9Ls)
