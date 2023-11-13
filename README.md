@@ -50,3 +50,15 @@ Añadir las cuatro carpetas al área de trabajo en Visual Studio Code.
 Dirigirse al archivo main.cpp dentro de la carpeta Clean Fingerprint, verificar que la terminal se encuentre en el entorno Default(Clean Fingerprint), compilar, cargar y seguir las instrucciones para borarr las huellas anteriormente registradas.
 
 [![12.png](https://i.postimg.cc/NGNmv1JX/12.png)](https://postimg.cc/vDVcW6d8)
+
+### Añadir Huellas:
+
+Dirigirse al archivo main.cpp dentro de la carpeta Enroll Fingerprint, verificar que la terminal se encuentre en el entorno Default(Enroll Fingerprint), compilar, cargar y seguir las instrucciones para borarr las huellas anteriormente registradas.
+
+[![13.png](https://i.postimg.cc/VvLYf0NZ/13.png)](https://postimg.cc/k6zrw4KW)
+
+### Funcionamiento del sistema de monitoreo:
+
+Dirigirse al archivo main.cpp dentro de la carpeta DataCenterMonitoring, verificar que la terminal se encuentre en el entorno Default(DataCenterMonitoring), compilar, cargar y seguir las instrucciones para borarr las huellas anteriormente registradas.
+
+[![14.png](https://i.postimg.cc/ZRwGL7Tj/14.png)](https://postimg.cc/Hc7vYt87)
