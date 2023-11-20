@@ -43,10 +43,12 @@ mejorar la seguridad y prevenir daños a equipos
 que permita el acceso autorizado al centro de datos, garantizando 
 la seguridad de las áreas críticas y reduciendo el riesgo de accesos 
 no autorizados.
+
 • Instalar y configurar sensores de temperatura y humedad en áreas 
 clave del centro de datos, con el fin de recopilar datos en tiempo 
 real y detectar fluctuaciones que puedan indicar problemas 
 potenciales en el entorno operativo.
+
 • Implementar un sistema de alertas automatizadas que notifiquen 
 al personal en tiempo real cuando se detecten condiciones fuera 
 de los límites establecidos, como temperaturas extremas o niveles 
@@ -86,5 +88,7 @@ para el análisis de tendencias y la toma de decisiones informadas.
 ## Recomendaciones
 
 • Mejorar el sistema físico de acceso, en especial el ensamble entre el servomotor y la puerta, para que cuando se acceda se abra y cierre automáticamente.
+
 • Mejorar la declaración de las políticas en AWS, para contribuir con las buenas prácticas.
+
 • Implementar la activación del resto de pines del NodeMCU ESP8266 para agregar más activadores y poder así mejoara la experiencia del usuario.
