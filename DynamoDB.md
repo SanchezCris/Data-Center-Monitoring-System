@@ -1,4 +1,4 @@
-### Conexion DynamoDB
+### Conexión DynamoDB
 
 Pasos para crear una base de datos en DynamoDB en AWS
 
