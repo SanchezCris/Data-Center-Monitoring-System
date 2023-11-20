@@ -10,6 +10,8 @@ Si aún no tienes una cuenta de AWS, puedes crear una de forma gratuita. Para el
 
 Una vez que tengas una cuenta de AWS, debes habilitar AWS IoT Core. Para ello, ve a la consola de AWS y busca "AWS IoT Core". Haz clic en el botón "Habilitar".
 
+[![a.jpg](https://i.postimg.cc/prsTCL6X/a.jpg)](https://postimg.cc/kRtqXqCk)
+
 3. Crear un certificado de cliente
 
 Un certificado de cliente es un archivo que contiene la información de identificación de tu dispositivo. Para crear un certificado de cliente, ve a la consola de AWS y busca "AWS IoT Core". Haz clic en el botón "Certificados". Haz clic en el botón "Crear certificado". Selecciona el tipo de certificado "Cliente". Haz clic en el botón "Siguiente". Introduce un nombre para el certificado. Haz clic en el botón "Crear".
