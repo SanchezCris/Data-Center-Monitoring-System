@@ -71,3 +71,11 @@ Según la imagen anterior, se puede observar que se realizó una conexión exito
 También se detectó el sensor lector de huellas, indicando que posee tres huellas registradas, de igual forma, se lee las características del sensor de temperatura y humedad.
 Posteriormente comienza a imprimir de forma local los valores de Temperatura y Humedada, además de que aún no se han detectado huellas.
 
+Para hacer accionar el servomotor que simula el acceso físico al centro de datos, se debe colocar el dedo de la mano registrado en el sensor lector de huellas.
+¿Cómo se sabe si la huella está registrada?
+
+Existe un diodo led de color verde que se encuentra intermitente, significa que se puede colar una huella para ser analizada.
+Si el diodo led de color verde de queda encendido por uno o dos segundos, significa que la huella está registrada y se activa el servomotor.
+Si la huella es rechazada, significa que no está registrada y se activa una alarmas emitida por un buzzer.
+
+[![7.jpg](https://i.postimg.cc/rmYwW19p/7.jpg)](https://postimg.cc/8JMGgr98)
