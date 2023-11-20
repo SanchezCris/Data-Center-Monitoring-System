@@ -79,3 +79,23 @@ Si el diodo led de color verde de queda encendido por uno o dos segundos, signif
 Si la huella es rechazada, significa que no está registrada y se activa una alarmas emitida por un buzzer.
 
 [![7.jpg](https://i.postimg.cc/rmYwW19p/7.jpg)](https://postimg.cc/8JMGgr98)
+
+### Thingskeapk:
+
+En la plataforma thingspeak se construyó un tablero en el cual muestra de forma gráfica en tiempo real los valores obtenidos, en dicho tablero se pueden observar gráficas en tiempo real de los valores de temperatura y humedad que existe en el ambiente, así como un indicador de marcación para los valores de humedad y temperatura.
+
+[![1.png](https://i.postimg.cc/nrn73bjL/1.png)](https://postimg.cc/cg5rJzcq)
+
+Adjunto se encuentra un registro de la cantidad de veces que las personas que registraron sus huellas han accedido al centro de datos, y la cantidad de veces que una persona no registrada ha intentado acceder.
+
+[![2.png](https://i.postimg.cc/NffmTtvJ/2.png)](https://postimg.cc/5jTXdZ0L)
+
+### AWS:
+
+Dentro de los servicios proporcionados por AWS Cloud, se realizó una conexión MQTT en la cual se muestran los valores de Humedad y Temperatura en tiempo real.
+
+[![3.png](https://i.postimg.cc/tgt421hh/3.png)](https://postimg.cc/kVGC5gY4)
+
+DE igual forma, se realizó una base de datos para almacenar los registros de dichos valores (Humedad y Temperatura) en una tabla dynamo en tiempo real.
+
+[![4.png](https://i.postimg.cc/KYyn1MGL/4.png)](https://postimg.cc/Mndc4XjK)
