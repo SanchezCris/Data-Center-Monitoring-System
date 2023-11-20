@@ -1,4 +1,4 @@
-### Conexion MQTT
+### Conexión MQTT
 
 Pasos para crear un cliente MQTT en AWS
 
