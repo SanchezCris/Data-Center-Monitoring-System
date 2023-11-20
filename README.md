@@ -62,3 +62,12 @@ Dirigirse al archivo main.cpp dentro de la carpeta Enroll Fingerprint, verificar
 Dirigirse al archivo main.cpp dentro de la carpeta DataCenterMonitoring, verificar que la terminal se encuentre en el entorno Default(DataCenterMonitoring), compilar, cargar y seguir las instrucciones para verificar el funcionamiento del sistema de monitoreo.
 
 [![14.png](https://i.postimg.cc/ZRwGL7Tj/14.png)](https://postimg.cc/Hc7vYt87)
+
+En cuanto se ejecute la terminal de comandos y se establezca una correcta conexión a la red Wi-Fi se podrá observar las siguientes impresiones:
+
+[![5.png](https://i.postimg.cc/SKhL6J8b/5.png)](https://postimg.cc/zyxR5D0x)
+
+Según la imagen anterior, se puede observar que se realizó una conexión exitosa con los servicios de AWS IoT.
+También se detectó el sensor lector de huellas, indicando que posee tres huellas registradas, de igual forma, se lee las características del sensor de temperatura y humedad.
+Posteriormente comienza a imprimir de forma local los valores de Temperatura y Humedada, además de que aún no se han detectado huellas.
+
