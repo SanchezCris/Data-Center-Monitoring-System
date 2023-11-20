@@ -44,20 +44,25 @@ Una vez que se haya creado el certificado de cliente, haz clic en el botón "Des
 
 [![i.jpg](https://i.postimg.cc/SR7pm1hX/i.jpg)](https://postimg.cc/D4ZNggmF)
 
-5. Instalar un cliente MQTT
-
-
-
-6. Configurar el cliente MQTT
+5. Instalar un cliente MQTT y configurar el cliente MQTT
 
   Código main de la carpeta MonitoringDataCenter/src
 
-7. Conectar el cliente MQTT a AWS IoT Core
+  [![j.jpg](https://i.postimg.cc/59GzzP8c/j.jpg)](https://postimg.cc/Z080txfj)
+
+6. Conectar el cliente MQTT a AWS IoT Core
 
 Una vez que hayas configurado el cliente MQTT, puedes conectarlo a AWS IoT Core. Para ello, utiliza el certificado de cliente y la clave privada que descargaste en el paso 4.
 
-8. Publicar y suscribirse a mensajes
+[![k.jpg](https://i.postimg.cc/nVskN9kJ/k.jpg)](https://postimg.cc/z3rKgB6t)
+
+7. Publicar y suscribirse a mensajes
 
 Una vez que el cliente MQTT esté conectado a AWS IoT Core, puedes publicar y suscribirte a mensajes.
 
 [![3.png](https://i.postimg.cc/tgt421hh/3.png)](https://postimg.cc/kVGC5gY4)
+
+
+De mejor manera, acá un video en donde explican de forma acompañada el procedimiento:
+
+https://youtu.be/x9GfxgkEpXg?si=qkPVO5daJy0mCpWK
